@@ -1,11 +1,14 @@
 MicropostApp::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   
   # get "static_pages/home"
   # match '/',        to: 'static_pages#home',    via: 'get'
   root 'static_pages#home' 
   
-  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signup',  to: 'users#new',            via: 'get'      # = register
+  match '/signin',  to: 'sessions#new',         via: 'get'      # = login
+  match '/signout', to: 'sessions#destroy',     via: 'delete'   # = logout
   
   # get "static_pages/help"
   match '/help',    to: 'static_pages#help',    via: 'get'
