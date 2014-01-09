@@ -35,6 +35,13 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+# Faker is for creating sample data
+gem 'faker'
+
+# Pagination
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
